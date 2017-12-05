@@ -3,4 +3,4 @@ URL: <a href='http://infotrasa.pl/'>infotrasa.pl</a>
 
 
 12.2017
-Project is in early state of development -> it's working almost as intendent but with many 'temporary' solution. Infotrasa was created be we with 'ZERO' knownlage about how proper web app should look like. In early days of 2018 I will rewrite whole project to use django - REST - leaflet.Consider this version as backup version/learning/demo.
+Project is currently being updated. It is working, but many 'temporary' solutions were used in the early stages of development. Infotrasa was created when I still had zero knowledge about how a proper web app should look like. In 2018 I will rewrite the whole project  using django-rest-framework. Please consider this version a demo or backup.
