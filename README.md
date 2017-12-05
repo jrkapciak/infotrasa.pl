@@ -4,3 +4,9 @@ URL: <a href='http://infotrasa.pl/'>infotrasa.pl</a>
 
 12.2017
 Project is currently being updated. It is working, but many 'temporary' solutions were used in the early stages of development. Infotrasa was created when I still had zero knowledge about how a proper web app should look like. In 2018 I will rewrite the whole project  using django-rest-framework. Please consider this version a demo or backup.
+
+Project used data from:
+API OpenWeatherMap, API OpenStreetMap, API OpenRouteService, GDDKiA , Wikipedia.
+
+Used plugins:
+Leaflet-Wikipedia , Leaflet-ContextMenu, Leaflet-EasyButton, Leaflet-easyPrint, Leaflet-LeafletRoutingMachine, Leaflet-Weather, Leaflet-Extra Markers, Leaflet.Locate.
