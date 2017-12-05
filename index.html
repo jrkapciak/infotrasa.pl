@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="pl-PL">
+<!--
+	
+-->
+<html>
+
+	<head>
+		<title>Infotrasa | cyfrowy atlas samochodowy </title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Infotrasa - cyfrowy atlas samochodowy">
+		<meta name="keywords" content="trasa,droga,informacje,jak dojechać,polska,atlas,samochód,mapa,utrudnienia,info">
+		<meta name="author" content="Jerzy Kapciak">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+						<!-- Logo -->
+							<div id="logo">
+							<h2><i class="fa  fa-car" aria-hidden="true" id="anim1"></i></h2>
+							<h1>infotrasa</h1>
+								
+								<span></span>
+                                
+							</div>
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li class="current"><a href="index.html">Strona główna</a></li>
+									<li>
+										<a href="#">Menu</a>
+										<ul>
+											<li><a href="/map/map.php">mapa</a></li>
+											<li><a href="#content">O projekcie</a></li>
+											<li><a href="#features-wrapper">Technologia</a></li>
+											<li><a href="#footer">Kontakt</a></li>
+								</ul>
+							</nav>
+
+					</header>
+				</div> 
+
+			<!-- Banner -->
+				<div id="banner-wrapper">
+					<div id="banner" class="box container">
+						<div class="row">
+							<div class="7u 12u(medium)"> 
+								<p> Infotrasa to cyfrowy atlas samochodowy wykorzystujący <a href="http://www.openstreetmap.org">OpenStreetMap</a> (bibliotekę JavaScript - 
+								<a href="http://leafletjs.com/">Leaflet</a> oraz inne rozwiązania Open Source)</p>
+							</div>
+							<div class="5u 12u(medium)">
+								<ul>
+									<li><a href="/map/map.php" class="button big icon fa-map-marker">Przejdź do mapy </a></li>
+									<li><a href="#content" class="button alt big icon fa-question-circle"> Więcej informacji</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+		
+
+		
+			<!-- Main -->
+				<div id="main-wrapper">
+					<div class="container">
+						<div id="content">
+						
+							<!-- Content -->
+								<article>
+
+									<center><h2>O projekcie</h2></center>
+									<p>Infotrasa jest efektem pracy nad stworzeniem cyfrowego atlasu samochodowego wykorzystującego otwarte dane przestrzenne oraz wolne oprogramowanie. W tym celu wykorzystano bibliotekę języka JavaScript Leaflet, która znacząco ułatwia dostęp do  informacji zgromadzonych przez użytkowników w serwisie OpeenStreetMap. 
+									<h4>Serwis aktualnie umożliwia:</h4>
+									<ul style="list-style-type:none">
+										<li><i class="fa  fa-map-marker" id="listMarker"></i>&emsp; wyznaczenie trasy przejazdu wraz z opisem trasy</li>
+										<li><i class="fa  fa-map-marker" id="listMarker"></i>&emsp;sprawdzenie aktualnych utrudnień na drogach zarządzanych przez GDDKiA</li>
+										<li><i class="fa  fa-map-marker" id="listMarker"></i>&emsp;lokalizację użytkownika</li>
+										<li><i class="fa  fa-map-marker" id="listMarker"></i>&emsp;sprawdzenie warunków atmosferycznych</li>
+										<li><i class="fa  fa-map-marker" id="listMarker"></i>&emsp;znajdowanie interesujących miejsc - na podstawie serwisu Wikipedia</li>
+										<li><i class="fa  fa-map-marker"id="listMarker"></i>&emsp;wydrukowanie mapy</li>
+									</ul>
+								</article>
+						</div>
+					</div>
+				</div>
+
+		<!-- Features -->
+				<div id="banner-wrapper">
+					<div id="banner" class="box container">
+						<div class="row">
+							<div class="4u 12u(medium)">
+
+								<!-- Box -->
+									<section class="box feature">
+										<a href="http://leafletjs.com/" class="image featured"><img src="images/leaflet-icon.png" alt="" /></a>
+									</section>
+
+							</div>
+							<div class="4u 12u(medium)">
+
+								<!-- Box -->
+									<section class="box feature">
+										<a href="https://www.openstreetmap.org" class="image featured"><img src="images/openstreetmap.png" alt="" /></a>
+									</section>
+
+							</div>
+							<div class="4u 12u(medium)">
+
+								<!-- Box -->
+									<section class="box feature">
+										<a href="http://www.liedman.net/leaflet-routing-machine/" class="image featured"><img src="images/orm.png" alt="" /></a>
+									</section>
+							
+
+							</div>
+							
+								<p><center><li>W ramach projektu wykorzystano dane pochodzące z:
+									<article>
+											<a href="http://openweathermap.org/API">API OpenWeatherMap</a>, 
+											<a href="http://openstreetmap.org">API OpenStreetMap</a>,  
+											<a href="https://www.openrouteservice.org/">API OpenRouteService</a>, 
+											<a href="http://www.gddkia.gov.pl/">GDDKiA</a> ,
+											<a href="https://pl.wikipedia.org/">Wikipedia</a>.
+										<article>
+									</li>
+	
+									<li>Oraz wtyczki do biblioteki Leaflet:
+										<article>
+											<a href="https://github.com/MatthewBarker/leaflet-wikipedia">Leaflet-Wikipedia</a> ,
+											<a href="https://github.com/aratcliffe/Leaflet.contextmenu">Leaflet-ContextMenu</a>,
+											<a href="https://github.com/CliffCloud/Leaflet.EasyButton">Leaflet-EasyButton</a>,
+											<a href="https://github.com/rowanwins/leaflet-easyPrint">Leaflet-easyPrint</a>,
+											<a href="http://www.liedman.net/leaflet-routing-machine/">Leaflet-LeafletRoutingMachine</a>,
+						
+											<a href="https://github.com/oskosk/Leaflet.Weather">Leaflet-Weather</a>,
+											<a href="https://github.com/coryasilva/Leaflet.ExtraMarkers">Leaflet-Extra Markers</a>,
+											<a href="https://github.com/domoritz/leaflet-locatecontrol">Leaflet.Locate</a>.
+										</article>
+									</li>
+								</p> </center>
+						</div>
+					</div>
+				</div>
+	<!-- Footer -->
+					<footer id="footer" class="container">
+                        <div id="copyright">
+                        <ul class="menu">
+                       <li><center>strona bazuje na szablonie autorstwa <a href="https://html5up.net">HTML5 UP</a></br>
+					   jerzyryszardkapciak@gmail.com</center> 
+					   </li>
+                       </ul>
+                        </div>                        
+ 
+
+			
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>

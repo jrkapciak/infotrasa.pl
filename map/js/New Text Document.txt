@@ -1,0 +1,86 @@
+       
+     // routin - place in separate js file
+        var control = L.Routing.control(L.extend(window.lrmConfig, {
+            waypoints: [],
+            geocoder: L.Control.Geocoder.nominatim(),
+            routeWhileDragging: false,
+            reverseWaypoints: true,
+            showAlternatives: true,
+            altLineOptions: {styles: [
+                {color: 'black', opacity: 0.15, weight: 9},
+                {color: 'white', opacity: 0.8, weight: 6},
+                {color: 'blue', opacity: 0.5, weight: 2}]}
+        })).addTo(map);
+
+        L.Routing.errorControl(control).addTo(map);
+        L.control.locate().addTo(map);
+        L.easyPrint({
+			title: 'Wydrukuj mapê',
+		}).addTo(map);
+        
+        var utr = L.easyButton(
+        'ion-android-warning', 
+        function(){
+                $(document).ready(function(){
+                $.ajax({
+                    type: "GET",
+                    url: "utrudnienia.xml",
+                    dataType: "xml",
+                    success: parseXml
+                    });
+                });
+                function parseXml(xml){ 
+                    $(xml).find("utrudnienia utr").each(function(){
+                // $("#output").append("Name: " + $(this).find("typ").text() + "<br />");
+                // $("#output").append("opis: " + $(this).find("objazd").text() + "<br />");
+                // $("#output").append("Województwo: " + $(this).find("woj").text() + "<br />");
+                  var blueMarker = L.ExtraMarkers.icon({
+                    icon: 'ion-heart',
+                    markerColor: 'blue',
+                    shape: 'square',
+                    prefix: 'ion'
+                    });
+                
+                var mapPoint = L.marker([$(this).find("geo_lat").text(),$(this).find("geo_long").text()], {icon: redMarker,})
+                //var mapPoint=L.marker([$(this).find("geo_lat").text(),$(this).find("geo_long").text()]);
+                
+                var objazd =  $(this).find("objazd").text();
+                var objazdDlugosc =  $(this).find("objazd").text().length;
+                
+                var ruch_wahadlowy = $(this).find("ruch_wahadlowy").text();
+                var rodzaj = $(this).find("poz").text();
+                mapPoint.addTo(map);
+                if (objazdDlugosc > 1)
+                    if (ruch_wahadlowy == 'true')
+                    {mapPoint.bindPopup(rodzaj +"<b> Ruch wahad³owy </br> opis: </b> " + objazd);}
+                    else 
+                    {mapPoint.bindPopup(rodzaj +"<b> opis: </b> " + objazd);}
+                    
+                else
+                {
+                    mapPoint.bindPopup( rodzaj + "<b> opis: </b> brak  ");
+                }
+                
+                });}
+                })
+                
+                
+        utr.addTo(map);
+        
+        // Creates a red marker with the coffee icon
+        var redMarker = L.ExtraMarkers.icon({
+                icon: 'ion-alert-circled',
+                markerColor: 'orange',
+                shape: 'square',
+                prefix: 'ion'
+                });
+
+        L.marker([51.941196,4.512291], {icon: redMarker,}).addTo(map);
+        
+    L.control.weather({
+    lang: "es",
+    units: "metric"
+    }).addTo(map);
+    var weatherControl = new L.Control.Weather(options);
+map.addControl(weatherControl);
+        
